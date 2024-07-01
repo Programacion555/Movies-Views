@@ -1,4 +1,4 @@
-from flask import Flask #descargar flask
+from flask import Flask
 from app.database import init_app
 from app.views import *
 
