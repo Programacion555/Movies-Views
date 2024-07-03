@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peliculas Vistas</title>
-</head>
-<body>
-    <h1>
-        <ul>
-            <li>
-                Peliculas Vistas:
-            </li>
-            <li>
-                Peliculas No Vistas
-            </li>
-        </ul>
-    </h1>
-    
-</body>
+
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content"width-device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Peliculas</title>
+        <!--Booststrap cdn-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/slate/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+        <!--Main.css-->
+        <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+	</head>
+
+	<body>
+        <main class="container p-4">
+            <h1 class="display-4 title text-center mt-4">Aplicacion de Peliculas</h1>
+            <div class="row">
+                <div class="col-md-4 offset-md-4 my-auto">
+                    <div class="card">
+                        <div class="card-header">
+                         
+                            <form action="/create-peliculas" method='POST'>
+                            <div class="form-group">
+                            <input type="text" name="content" placeholder="Pelis" class="form-control" autofocus>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">save
+                            </button>
+                         </form>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                {%for peliculas in peliculas%}
+                                <li class="list-group-item">
+                                   <span class="{%if peliculas.done%}done{%endif%}">{{peliculas.content}}</span>
+                                    <a href="/done/{{pelicula.id}}" class="btn btn-sucess btn-sm">Done</a>
+                                
+                                    <a href="/delete/{{pelicula.id}}" class="btn btn-danger btn-sm">DELETE</a>
+                                </li>
+
+                                {% endfor %}
+                            
+                            </ul>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+	</body>
+
 </html>
