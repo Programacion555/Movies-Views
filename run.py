@@ -1,9 +1,14 @@
-from flask import Flask
+from flask import Flask, render_template
 from app.database import init_app
 from app.views import *
 
 app = Flask(__name__)
 init_app(app)
+
+@app.route("/")
+def index():
+    nome="Movies-Views"
+    return render_template("index.html",nome=nome)
 
 app.route("/",methods=["GET"])(index)
 app.route("/api/movies/",methods=["GET"])(get_all_movies)
