@@ -7,8 +7,7 @@ init_app(app)
 
 @app.route("/")
 def index():
-    nome="Movies-Views"
-    return render_template("index.html",nome=nome)
+    return render_template("index.html")
 
 app.route("/",methods=["GET"])(index)
 app.route("/api/movies/",methods=["GET"])(get_all_movies)
