@@ -15,7 +15,7 @@
 
 	<body>
         <main class="container p-4">
-            <h1 class="display-4 title text-center mt-4">Peliculas Vistas</h1>
+            <h1 class="display-4 title text-center mt-4">Movies_Views</h1>
             <div class="row">
                 <div class="col-md-4 offset-md-4 my-auto">
                     <div class="card">
@@ -25,24 +25,57 @@
                             <div class="form-group">
                             <input type="text" name="content" placeholder="Pelis" class="form-control" autofocus>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">save
+                            <button type="submit" class="btn btn-primary btn-block">SAVE
                             </button>
                          </form>
                         </div>
                         <div class="card-body">
                             <ul class="list-group">
-                                {%for peliculas in peliculas%}
+                              <!-- {%for peliculas in peliculas%}-->
                                 <li class="list-group-item">
-                                   <span class="{%if peliculas.done%}done{%endif%}">{{peliculas.content}}</span>
+                                   <!--<span class="{%if peliculas.done%}done{%endif%}">{{peliculas.content}}</span>-->
                                     <a href="/done/{{pelicula.id}}" class="btn btn-sucess btn-sm">Done</a>
                                 
                                     <a href="/delete/{{pelicula.id}}" class="btn btn-danger btn-sm">DELETE</a>
                                 </li>
 
-                                {% endfor %}
+                               <!--  {%endif%}-->
                             
                             </ul>
+
                     </div>
+                    
+                    </div>
+                    <section>
+                    <ul>
+                    <li>Thriller
+                    <img src="https://th.bing.com/th/id/OIP.wTLYYY9oXmoYhzYYOS7ikAAAAA?w=264&h=180&c=7&r=0&o=5&pid=1.7" alt="Thriller"
+                    width="500"
+                    height="341" />
+                    </li>
+                    <br>
+                    <li>Animadas
+                    <img src="https://th.bing.com/th/id/OIP.LlyloH1-subiH9ouGSwVzgHaEK?w=224&h=180&c=7&r=0&o=5&pid=1.7" alt="Animadas"
+                    width="500"
+                    height="341" />
+                    </li>
+                    <li>Amor
+                    <img src="https://th.bing.com/th/id/OIP.p1veZCAkHGZfSsphyNW7eAHaDt?w=294&h=175&c=7&r=0&o=5&pid=1.7" alt="Amor"
+                    width="500"
+                    height="341" />
+                    </li>
+                    <li>Latinoamericanas
+                    <img src="https://th.bing.com/th/id/OIP.vbazZEFKA906DXKprirNQQHaFj?w=163&h=180&c=7&r=0&o=5&pid=1.7" alt="Thriller"
+                    width="500"
+                    height="341" />
+                    </li>
+                    <li>Cine Mudo
+                        <img src="https://th.bing.com/th/id/OIP.KoOf0rH2BOgQkCS2i4oI7AHaEK?w=291&h=180&c=7&r=0&o=5&pid=1.7" alt="Thriller"
+                        width="500"
+                        height="341" />
+                    </li>
+                    </ul>
+                </section>
                 </div>
             </div>
 
